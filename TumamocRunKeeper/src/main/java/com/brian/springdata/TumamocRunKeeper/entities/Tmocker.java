@@ -1,4 +1,5 @@
 package com.brian.springdata.TumamocRunKeeper.entities;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,8 +12,8 @@ public class Tmocker {
 	private int id;
 	private String name;
 	private String email;
-
-	
+	@Embedded
+	private Session session;
 	
 	public int getId() {
 		return id;

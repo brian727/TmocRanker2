@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.brian.springdata.TumamocRunKeeper.entities.Session;
 import com.brian.springdata.TumamocRunKeeper.entities.Tmocker;
 import com.brian.springdata.TumamocRunKeeper.repos.TmockerRepository;
 
@@ -26,9 +27,14 @@ class TumamocRunKeeperApplicationTests {
 	@Test
 	public void testCreate() {
 		Tmocker tmocker = new Tmocker();
-		tmocker.setId(1);
+		tmocker.setId(2);
 		tmocker.setName("Tmocker1");
 		tmocker.setEmail("tmocker1@aol.com");
+		Session session = new Session();
+		session.setSessiondate(null);
+		session.setSessionstart(null);
+		session.setSessionstop(null);
+		session.setSessionduration(null);
 		repository.save(tmocker);
 	}
 	
