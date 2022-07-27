@@ -1,6 +1,7 @@
 package com.brian.springdata.TumamocRunKeeper.entities;
 
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -10,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 
 
@@ -59,8 +62,18 @@ public class Tmocker {
 		this.sessions = sessions;
 	}
 
-	
+	public void addSession(Session session) {
+		if(session!=null) {
+			if(sessions==null) {
+				sessions = new HashSet<>();
+			}
+			session.setTmocker(this);
+			sessions.add(session);
+		}
+	}
 }
+
+
 
 
 
